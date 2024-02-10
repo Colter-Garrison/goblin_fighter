@@ -21,8 +21,10 @@ func _process(delta):
 
 	position += velocity * delta
 
-	if velocity.x || velocity.y != 0:
+	if velocity.length() > 0:
 		$blue_torch.animation = "walking"
+	# Only update flip_h if there's horizontal movement
+	if velocity.x != 0:
 		$blue_torch.flip_h = velocity.x < 0
 
 func start(pos):
