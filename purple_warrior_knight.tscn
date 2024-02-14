@@ -394,7 +394,7 @@ metadata/_edit_group_ = true
 [node name="purple_warrior" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uud47")
 animation = &"down_swing_left"
-frame_progress = 0.134974
+frame_progress = 0.821934
 speed_scale = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
