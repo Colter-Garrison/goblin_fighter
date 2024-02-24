@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://b71njntskhock"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_c8hgl"]
+[ext_resource type="Texture2D" uid="uid://cm87quwlgqg6i" path="res://art/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="2_s4c2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6735g"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v51ho"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk4ok"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufv2y"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6cmu"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opmoo"]
+atlas = ExtResource("2_s4c2t")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oo73h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6735g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v51ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk4ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufv2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6cmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opmoo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpjqc"]
+radius = 41.0488
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_c8hgl")
+
+[node name="RedKnight" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oo73h")
+animation = &"idle"
+frame_progress = 0.195395
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kpjqc")
