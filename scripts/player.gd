@@ -4,6 +4,7 @@ extends Area2D
 
 var speed := 200
 var health := 100
+var gold := 0
 
 func _ready() -> void:
 	healthbar.init_health(health)
@@ -25,13 +26,13 @@ func _process(delta):
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 		
+	if Input.is_action_just_pressed("attack"):
+		$BlueTorch.animation = "attacking_forward"
+		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	else:
 		$BlueTorch.animation = "standing"
-		
-	if Input.is_action_just_pressed("attack"):
-		$BlueTorch.animation = "attacking_forward"
 	
 	position += velocity * delta
 	
@@ -46,6 +47,15 @@ func set_health(new_health: int) -> void:
 	get_node("Control/HealthBar").value = health
 	healthbar.health = health
 
-func _on_area_entered(_area_that_entered: Area2D) -> void:
-	set_health(health - 0)
-	get_node("Control/HealthBar").value = health
+func set_gold_amount(new_gold_amount: int) -> void:
+	gold = new_gold_amount
+	print("Gold Amount: ", str(gold))
+
+func _on_area_entered(area_that_entered: Area2D) -> void:
+	if area_that_entered.is_in_group('enemy'):
+		if health > 0:
+			set_health(health - 10)
+		else:
+			health = 0
+	elif area_that_entered.is_in_group('gold'):
+		set_gold_amount(gold + 10)

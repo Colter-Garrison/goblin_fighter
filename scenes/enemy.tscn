@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_c8hgl"]
 [ext_resource type="Texture2D" uid="uid://bga5kqo8u0nhb" path="res://art/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png" id="2_3a425"]
 [ext_resource type="Texture2D" uid="uid://cm87quwlgqg6i" path="res://art/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Red/Warrior_Red.png" id="2_s4c2t"]
-[ext_resource type="Script" path="res://scenes/EnemyHealthBar.gd" id="4_ykbio"]
+[ext_resource type="Script" path="res://scripts/EnemyHealthBar.gd" id="4_qkqpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0af8g"]
 atlas = ExtResource("2_3a425")
@@ -157,7 +157,7 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_cnbfw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jsb2k")
 value = 60.0
 show_percentage = false
-script = ExtResource("4_ykbio")
+script = ExtResource("4_qkqpy")
 
 [node name="DamageBar" type="ProgressBar" parent="Control/HealthBar"]
 z_index = -1

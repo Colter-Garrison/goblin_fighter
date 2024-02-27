@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dy7ej"]
 [ext_resource type="Texture2D" uid="uid://t7r0y4fxo63" path="res://art/Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_hviop"]
-[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="3_62ocg"]
+[ext_resource type="Script" path="res://scripts/PlayerHealthBar.gd" id="3_cb4qx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4hxt"]
 atlas = ExtResource("2_hviop")
@@ -301,7 +301,7 @@ theme_override_styles/background = SubResource("StyleBoxEmpty_qlxqv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_pox8q")
 value = 60.0
 show_percentage = false
-script = ExtResource("3_62ocg")
+script = ExtResource("3_cb4qx")
 
 [node name="DamageBar" type="ProgressBar" parent="Control/HealthBar"]
 z_index = -1
